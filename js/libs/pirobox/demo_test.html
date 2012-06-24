@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pirobox Extended</title>
+<link href="css_pirobox/style_5/style.css" rel="stylesheet" type="text/css" />
+	
+	
+ <!--   
+<script type="text/javascript" src="js/jquery_1.5-jquery_ui.min.js"></script>
+-->
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+			
+<script type="text/javascript" src="js/pirobox_extended_feb_2011.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$.piroBox_ext({
+	piro_speed :700,
+	bg_alpha : 0.5,
+	piro_scroll : true,
+	piro_drag :false,
+	piro_nav_pos: 'bottom'
+});
+});
+</script>
+<style>
+li{
+list-style:none;	
+}
+</style>
+</head>
+<body>
+<h2>Image gallery with zoom option for large images</h2>
+<ul>
+    <li>
+        <a href="img/33.jpg" rel="gallery"  class="pirobox_gall" title="">
+            <img src="img/33s.jpg"  />
+        </a>
+    </li>
+    <li>
+        <a href="img/34.jpg" rel="gallery"  class="pirobox_gall" title="">
+            <img src="img/34s.jpg"  />
+        </a>
+    </li>
+    <li>
+        <a href="img/37.jpg" rel="gallery"  class="pirobox_gall" title="">
+            <img src="img/37s.jpg"  />
+        </a>
+    </li>
+    <li>
+        <a href="img/38.jpg" rel="gallery"  class="pirobox_gall" title="">
+            <img src="img/38s.jpg"  />
+        </a>
+    </li>
+</ul>
+
+<h2>Single image</h2>
+
+<a href="img/32.jpg" rel="single"  class="pirobox" title="Me and my friend Niko" style="margin:0 10px 0 0;"><img src="img/32s.jpg"  /></a>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+<h2>URL  image error</h2>
+
+<a href="img/mmsmsmsmsm.jpg" rel="single"  class="pirobox" title="Io e Niko" style="margin:0 10px 0 0;"><img src="img/13s.jpg"  /></a>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<h2>Mixed gallery, swf files are all embedded directly in the page </h2>
+<h2> <a href="#inline" rel="inline-800-250"  class="pirobox_gall1" title="Inline content">► <span class="span_f_c">Inline content </span><b style="font-size:12px;">Open </b><span style="font-size:10px;">(800x250px)</span></a> </h2>
+
+
+<div id="inline" style="display:none; background:white;">
+<h2 class="h2">Inline content</h2>
+<p style="padding:20px;"><a href="img/27.jpg" rel="single"  class="pirobox" title="Lights"><img src="img/27s.jpg" style="float:left; margin:0 5px 0 0;"  /></a>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<h2><a  href="test.html .result1,.result3" title="Login form" rel="content-310-260" class="pirobox_gall1">► <span class="span_f_c">HTML Content, (load portion of code) </span><b style="font-size:12px;">Open </b><span style="font-size:10px;">(310x260px)</span></a></h2>
+<h2> <a  href="test.html" title="Login form" rel="content-310-260" class="pirobox_gall1">► <span class="span_f_c">HTML Content (load whole page) </span><b style="font-size:12px;">Open </b><span style="font-size:10px;">(310x260px)</span></a></h2>
+
+<h2> <a  href="img/13.jpg" title="Lisbona" rel="gallery" class="pirobox_gall1">► <span class="span_f_c">Image </span><b style="font-size:12px;">Open </b><span style="font-size:10px;">(Image size)</span></a></h2>
+
+<h2><a href="http://www.youtube-nocookie.com/v/Bkjv9SscotY&amp;hl=it_IT&amp;fs=1?rel=0" rel="flash-640-505"  class="pirobox_gall1" title="You tube ">► <span class="span_f_c">You Tube</span> <b style="font-size:12px;"> Open </b><span style="font-size:10px;"> (640x505px)</span></a></h2>
+
+<h2><a href="http://www.jquery.com" rel="iframe-full-full"  class="pirobox_gall1" title="jQuery website">►<span class="span_f_c">jQuery </span><b style="font-size:12px;"> Open </b> <span style="font-size:10px;">(full screen)</span></a></h2>
+
+<h2><a href="http://vimeo.com/moogaloop.swf?clip_id=18361415&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=1&amp;color=00ADEF&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" class="pirobox_gall1" rel="flash-900-350" title="Intro">►<span class="span_f_c">Vimeo </span><b style="font-size:12px;"> Open </b><span style="font-size:10px;">(900x350px)</span></a></h2>
+
+<h2><a href="intro_ants.swf" class="pirobox_gall1" rel="flash-900-350" title="Intro">►<span class="span_f_c">SWF </span><b style="font-size:12px;"> Open </b><span style="font-size:10px;">(900x350px)</span></a></h2>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+#test{
+	
+}
+	#test .box{
+		width:200px;
+		height:200px;
+		border:0px solid red;
+		cursor:pointer;
+		float:left;
+		margin:5px;
+	}
+			#test .box img{
+				width:200px;
+				height:200px;
+			}	

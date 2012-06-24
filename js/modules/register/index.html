@@ -1,0 +1,59 @@
+<div class='centerWrapper'  >
+	<table>
+		<tr>
+			<td>Full Name
+			</td>
+			<td><input name="name" id="name" type="text" value="{{ model.name }}">
+			</td>
+		</tr>
+		<tr>
+			<td>Email
+			</td>
+			<td><input name="email" id="email" type="text" value="{{ model.email}}">
+			</td>
+		</tr>		
+		<tr>
+			<td>&nbsp;
+			</td>
+			<td >
+				<input id="submit" type="button" value="submit">
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;
+			</td>
+			<td >
+				<input id="delete" type="button" value="delete">
+			</td>
+		</tr>	
+		<tr>
+			<td colspan=2>
+				<div  id='response'   style='border:1px solid gray'  >
+					&nbsp;
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2>
+				<div  id='image_div'    >
+					<img />
+				</div>
+			</td>
+		</tr>		
+		<tr>
+			<td colspan=2>
+				<form id='form0' target='target_iframe' action='' enctype='multipart/form-data'  method='POST'>
+					<input  id='callback' name="callback" type="hidden" value="">
+					<input name="profileImage" type="file" value="">
+					<input id="submitImage" type="button" value="submit image">
+				</form>
+			</td>
+		</tr>		
+		<tr>
+			<td colspan=2>
+				<iframe  id='target_iframe' ></iframe>
+			</td>
+		</tr>									
+	</table>
+	</form>
+</div>

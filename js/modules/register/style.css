@@ -1,0 +1,41 @@
+#register{
+}
+	#register .centerWrapper{
+		width:600px;
+		margin:50px auto;
+		border:1px solid gray;
+	}
+
+		#register .centerWrapper table{
+			
+		}
+		#register .centerWrapper table td{
+			padding:20px;
+			width:100%;
+		}
+		
+			#register .centerWrapper table td #image_div{
+				border:1px dotted gray;
+				width:150px;
+				height:150px;
+				margin:0 auto;
+			}		
+					#register .centerWrapper table td #image_div img{
+						width:150px;
+						height:150px;
+					}					
+		
+			#register .centerWrapper table td input[type=text]{
+				padding:10px;
+				width:250px;
+				font-size:20px;
+			}
+			#register .centerWrapper table td input[type=button],
+			#register .centerWrapper table td input[type=file]{
+				font-size:20px;
+			}			
+			#register .centerWrapper table td #target_iframe{
+		    border: 1px solid gray;
+		    width:500px;
+		    display:block;
+			}

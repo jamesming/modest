@@ -1,0 +1,57 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+
+		<title>YoxView demo - Basic usage</title>
+		<link rel="Stylesheet" type="text/css" href="yoxview.css" />
+		<style>
+			body
+			{
+			font-family: Arial, Sans-Serif;
+			margin: 0;
+			}
+			#container{ width: 700px; margin: 40px auto; }
+			h1{ font-size: 1.5em; font-weight: bold; }
+			hr{ clear: both; }
+			
+			.thumbnails a
+			{
+			display: block;
+			float: left;
+			margin: 4px;
+			}
+			.thumbnails a img{ border: solid 1px Black; }
+			.thumbnails a:hover img{ border: solid 1px #aaa }
+		</style>
+		<script type="text/javascript" language="javascript" 
+			src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery.yoxview-2.21.min.js"></script>
+
+		<script type="text/javascript">
+		    $(document).ready(function(){
+		        $(".yoxview").yoxview();
+		    });
+		</script>
+
+	</head>
+	<body>
+
+		<div id="container">
+
+			<h1>YoxView demo - Basic usage</h1>
+			Click on the thumbnails to open YoxView:
+			<div class="thumbnails yoxview">
+
+				<a href="images/large/01.jpg"><img src="images/thumbnails/01.jpg" alt="First" title="The first image" /></a>
+
+				<a href="images/large/02.jpg"><img src="images/thumbnails/02.jpg" alt="First" title="The SECOND image" /></a>
+
+				<a href="images/large/03.jpg"><img src="images/thumbnails/03.jpg" alt="First" title="The THIRD image" /></a>
+
+			</div>
+		</div>
+
+	</body>
+</html>

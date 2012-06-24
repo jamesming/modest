@@ -1,0 +1,17 @@
+.box{
+text-align:center;
+font-size:120px;
+font-weight:bold;
+position:relative;
+bottom:5%;
+top:5%;
+}
+
+	.box .square{
+	background:white;
+	width:100px;
+	height:100px;
+	border:1px solid red;
+	float:left;
+	margin:20px;
+	}

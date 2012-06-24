@@ -1,0 +1,41 @@
+#upload #image_div{
+	border:1px dashed blue;
+	width:150px;
+	height:150px;
+	cursor: pointer;
+	display:none;
+}		
+		#upload #image_div img{
+			width:150px;
+			height:150px;
+		}
+		
+#upload #launchModal{
+	display:none;
+}							
+		
+
+#upload input[type=text]{
+	padding:10px;
+	width:250px;
+	font-size:20px;
+}
+#upload input[type=button],
+#upload input[type=file]{
+	font-size:20px;
+	display:none;
+}
+#upload input#delete[type=button]{
+	display:none;
+}
+
+#target_iframe_wrapper{
+	display:none;
+}
+			
+	#target_iframe_wrapper #target_iframe{
+		    border: 1px solid gray;
+		    width:400px;
+		    height:200px;
+		    display:block;
+	}
