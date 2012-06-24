@@ -17,7 +17,7 @@ define([
 		,template
 		,PiroboxView
 		) {
-			
+			//
 		var Model = Backbone.Model.extend();
 			
     core.createContainer('pirobox', 'ul');
