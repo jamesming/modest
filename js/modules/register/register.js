@@ -3,15 +3,13 @@ define([
 		'core', 
 		'underscore', 		
 		'backbone',
-		'text!modules/register/index.html?v='  + (Math.floor(Math.random() * (99999999999999 - 1 + 1)) + 1), 
-		'modules/register/view/view'
+		'text!modules/register/index.html?v='  + (Math.floor(Math.random() * (99999999999999 - 1 + 1)) + 1)
 	], function(
 		$, 
 		core, 
 		_, 		
 		Backbone, 
-		template, 
-		registerView
+		template
 		) {
 			
 		var Model = Backbone.Model.extend({
@@ -26,13 +24,14 @@ define([
 
 		    url: '/api/index.php/rest/index/users' 
     	
-    	}),
+    	})
     	
-    	model = new Model({
+    	,model = new Model({
     							asset: 'images',
 									name:'James Ming',
 									email: 'jamesming@gmail.com'
-								});
+								})
+			,registerView = Backbone.View.extend();
 			
 	    core.createContainer('register');
 	    

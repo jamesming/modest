@@ -1,0 +1,19 @@
+html, body, .full_size {
+    height: 90%;
+}
+#outter{
+top:20px;
+position:relative;
+overflow-x:hidden;
+overflow-y:hidden;
+}
+	#outter #panels_wrapper{
+	
+	}
+		#outter #panels_wrapper .panel{
+		float:left;
+		}
+			#outter #panels_wrapper .panel .rightSection{
+				padding-left:70px;
+				box-sizing:border-box;
+			}		

@@ -4,17 +4,16 @@ define([
 		,'underscore' 		
 		,'backbone'
 		,'text!modules/generic/index.html?v='  + (Math.floor(Math.random() * (99999999999999 - 1 + 1)) + 1)
-		,'modules/generic/view/view'
 	], function(
 		$ 
 		,core 
 		,_		
 		,Backbone
 		,template
-		,GenericView
 		) {
 			
-		var Model = Backbone.Model.extend();
+		var Model =  Backbone.Model.extend()
+								,GenericView = Backbone.View.extend();
 			
     core.createContainer('generic');
 

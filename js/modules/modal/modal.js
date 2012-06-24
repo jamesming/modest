@@ -5,7 +5,6 @@ define([
 		,'backbone'
 		,'fancyzoom'
 		,'text!modules/modal/index.html?v='  + (Math.floor(Math.random() * (99999999999999 - 1 + 1)) + 1)
-		,'modules/modal/view/view'
 	], function(
 		$, 
 		core 
@@ -13,10 +12,10 @@ define([
 		,Backbone
 		,fancyzoom
 		,template
-		,ModalView
 		) {
 			
-		var Model = Backbone.Model.extend();
+		var  Model = Backbone.Model.extend()
+				,ModalView= Backbone.View.extend();
 			
     core.createContainer('modal');
     

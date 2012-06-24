@@ -4,15 +4,15 @@ define([
 		'underscore', 		
 		'backbone',
 		'text!modules/upload/index.html?v='  + (Math.floor(Math.random() * (99999999999999 - 1 + 1)) + 1), 
-		'modules/upload/view/view'
 	], function(
 		$, 
 		core, 
 		_, 		
 		Backbone, 
-		template, 
-		uploadView
+		template 
 		) {
+			
+			var uploadView = Backbone.View.extend();
 			
 	    core.createContainer('upload');
 	    

@@ -6,7 +6,6 @@ define([
 		,'underscore' 		
 		,'backbone'
 		,'text!modules/image_sample/index.html?v='  + (Math.floor(Math.random() * (99999999999999 - 1 + 1)) + 1)
-		,'modules/image_sample/view/view'
 	], function(
 		$
 		,jquery_ui 
@@ -15,7 +14,6 @@ define([
 		,_		
 		,Backbone
 		,template
-		,Image_sampleView
 		) {
 			
 		var	 module_name = 'image_sample'
@@ -24,7 +22,8 @@ define([
 				
 				,Collection = Backbone.Collection.extend()
 		
-				,Model = Backbone.Model.extend({   url: '/api/index.php/rest/index/' + table  	});
+				,Model = Backbone.Model.extend({   url: '/api/index.php/rest/index/' + table  	})
+				,Image_sampleView = Backbone.View.extend();
 			
     core.createContainer(module_name, container_type = 'ul');
 

@@ -1,36 +1,31 @@
 define([
 		'jquery', 
 		'core', 
-		'mousewheel', 
-		'jscrollpane', 
 		'underscore', 		
 		'backbone',
-		'text!modules/scrollpane/index.html?v='  + (Math.floor(Math.random() * (99999999999999 - 1 + 1)) + 1)
+		'text!modules/scenecredit/topbar/index.html?v='  + (Math.floor(Math.random() * (99999999999999 - 1 + 1)) + 1), 
 	], function(
 		$, 
 		core, 
-		mousewheel, 
-		jscrollpane, 
 		_, 		
 		Backbone, 
 		template
 		) {
 			
-		var Model =  Backbone.Model.extend()
-								,ScrollpaneView=Backbone.View.extend();
-			
-    core.createContainer('scrollpane');
+		var  Model = Backbone.Model.extend()
+				,TopbarView =Backbone.View.extend();
+    core.createContainer('topbar');
     
 
-    _.extend(ScrollpaneView.prototype,{
+    _.extend(TopbarView.prototype,{
     	
     				initialize: function(){
 
-		        	core.loadCSS('scrollpane', function(){}); 
+		        	core.loadCSS('scenecredit/topbar', function(){}); 
 
     				},
     	
-					  el: '#scrollpane',
+					  el: '#topbar',
 					  
 					  render: function() {
 					      $(this.el).append(this.template);
@@ -45,11 +40,11 @@ define([
 
     return {
     	
-    		module_name: 'scrollpane',
+    		module_name: 'topbar',
     	
-    		description: 'Scrollpanes Module for testing.',
+    		description: 'Topbars Module for testing.',
     		
-    		view:new ScrollpaneView(),
+    		view:new TopbarView(),
 
         register:function(){
         	
@@ -76,17 +71,8 @@ define([
 					setTimeout(function(){
 
 						if( window.parent.$('#single_module').is(":checked")  ){
-							core.method('scrollpane', 'doSomething', arg1 = new Model());
+							core.method('topbar', 'doSomething', arg1 = new Model());
 						};
-						
-						
-						// $('.scroll-pane').jScrollPane();
-						$('.scroll-pane-arrows').jScrollPane(
-							{
-								showArrows: true,
-								horizontalGutter: 10
-							}
-						);
 						
 
 					}, 500); 					
