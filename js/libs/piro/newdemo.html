@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Pirobox Extended</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+	
+	
+ <!-- <script type="text/javascript" src="js/jquery.1.7.1.min.js"></script>  
+<script type="text/javascript" src="js/jquery_1.5-jquery_ui.min.js"></script>
+
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+-->	
+
+
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/jquery.ui.core.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.widget.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.mouse.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.mouse.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.draggable.min.js"></script>
+<script type="text/javascript" src="js/pirobox_extended_v.1.2.js"></script>
+
+<script type="text/javascript">
+jQuery(function($) {
+    jQuery('a[href$="jpg"], a[href$="bmp"], a[href$="gif"], a[href$="jpeg"], a[href$="png"]')
+    .addClass('pirobox_gall_38')
+    .attr('rel', 'gallery');
+    $.pirobox_ext({
+        piro_speed: 900,
+        zoom_mode: true,
+        move_mode: 'mousemove',
+        bg_alpha: 0.5,
+        bgColor:'rgba(0, 0, 0, 0.9)',
+        piro_scroll: true,
+        share: true,
+        resize: true
+    });
+});
+</script>
+<style>
+li{
+list-style:none;	
+}
+</style>
+</head>
+<body>
+<h2>Image gallery with zoom option for large images</h2>
+<ul>
+    <li>
+        <a href="img/33.jpg"  class=' pirobox_gall'  title="">
+            <img src="img/33s.jpg"  />
+        </a>
+    </li>
+    <li>
+        <a href="img/34.jpg"   class=' pirobox_gall' title="">
+            <img src="img/34s.jpg"  />
+        </a>
+    </li>
+    <li>
+        <a href="img/37.jpg"   class=' pirobox_gall' title="">
+            <img src="img/37s.jpg"  />
+        </a>
+    </li>
+    <li>
+        <a href="img/38.jpg"   class=' pirobox_gall' title="">
+            <img src="img/38s.jpg"  />
+        </a>
+    </li>
+</ul>
+
+
+</body>
+</html>

@@ -4,7 +4,7 @@ define([
 		'jquery', 
 		'underscore', 		
 		'backbone',
-		'text!modules/panels/index.html?v='  + (Math.floor(Math.random() * (99999999999999 - 1 + 1)) + 1) ], function(
+		'text!modules/more/index.html?v='  + (Math.floor(Math.random() * (99999999999999 - 1 + 1)) + 1) ], function(
 		
 		core,
 		$, 

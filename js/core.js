@@ -232,21 +232,21 @@ define([
 				*/
 				,css:{}
 				
-        ,loadCSS: function(module_name, callback) {
+        ,loadCSS: function(pathname, callback) {
         	
-						if (module_name in this.css) {
+						if (pathname in this.css) {
 							
 								callback();
 								
 						}else{
 							
-	        		this.css[module_name] = {};
+	        		this.css[pathname] = {};
 	        		
 	            var  head = document.getElementsByTagName('head')[0]
 	            		,link = document.createElement('link')
-	            		,path = 'js/modules/' + module_name + '/style.css'+ '?v=' + Math.floor(Math.random() * (99999999999999 - 1 + 1)) + 1;
+	            		,path = 'js/modules/' + pathname + '/style.css'+ '?v=' + Math.floor(Math.random() * (99999999999999 - 1 + 1)) + 1;
 	            
-	            link.id = 'style_' + module_name;
+	            link.id = 'style_' + pathname;
 	            link.rel = 'stylesheet';
 	            link.type = 'text/css';
 	            link.href = path;
@@ -256,7 +256,7 @@ define([
 	            $(head).prepend(link);	           
 	            
 								
-							if ($("#style_" + module_name )[0]) {
+							if ($("#style_" + pathname )[0]) {
 								
 								//console.log('does exist' );
 							
@@ -269,7 +269,7 @@ define([
 	            var that = this;
 	            
               $.get(path, function(data) {
-					        that.css[module_name].style = data;
+					        that.css[pathname].style = data;
 					    });
 					    
 							setTimeout(function(){
@@ -279,7 +279,7 @@ define([
 							}, 1000); 					    
 
 						}
-
+						
         }
         ,loadLESS: function( lessStyle ) {
         	

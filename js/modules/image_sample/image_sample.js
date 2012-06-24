@@ -1,6 +1,6 @@
 define([
 		 'jquery'
-		,'jquery_ui'
+		,'jquery_ui_1_8_16'
 		,'pirobox'		 
 		,'core'
 		,'underscore' 		

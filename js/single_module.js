@@ -25,7 +25,7 @@ define([
             }
             
             
-						//console.log(style);        
+						// console.log(style);        
             
 					}, 1000); 
 			
