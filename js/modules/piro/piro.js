@@ -1,9 +1,9 @@
 define([
 		 'jquery'
-		,'jquery_ui_1_8_16'
-		,'widget'
-		,'mouse'
-		,'draggable'
+		,'order!jquery_ui_1_8_16'
+		,'order!widget'
+		,'order!mouse'
+		,'order!draggable'
 		,'piro'
 		,'core'
 		,'underscore' 		
@@ -31,13 +31,54 @@ define([
     _.extend(PiroView.prototype,{
     	
     				initialize: function(){
-		        	core.loadCSS('piro', function(){}); 
+    					
+    					var that = this;
+    					
+		        	core.loadCSS('piro', function(){
+		        		
+					        	var		count=9
+					        				,html=''
+					        				,images = [33, 34, 37, 38, 13, 27]
+					        				,len = images.length;
+					        				
+					        	that.collection = new Collection()
+					        	
+					        	for(var i = 0 ; i < len; i++ ){
+					        		html += that.createModel(images[i]);
+					        	}
+					        	
+					        	that.render( html );			        		
+		        		
+		        	}); 
+		        	
+		        	
+    				}
+    				
+    				,createModel: function(image){
+    					
+	    					var model = new Model({
+							    											 small: image + 's'
+							    											,large: image 
+																			});
+																	
+								model.set('cid', model.cid);
+								
+								this.collection.add([
+									model
+						 		]);							
+								
+								var html = _.template(template, {
+								    model: model.toJSON()  
+								});
+	
+						 		return html;	
+    					
     				}
     	
 					  ,el: '#piro'
 					  
-					  ,render: function() {
-					      $(this.el).append(this.template);
+					  ,render: function(html) {
+					      $(this.el).append(html);
 					  }
 					  
 				    ,events: {
@@ -71,7 +112,7 @@ define([
 
         ,init: function() {
         	
-					this.register();
+					//this.register();
 					
 					var that = this.view;
 				
@@ -80,15 +121,6 @@ define([
 							&& window.parent.$('#module3').val() == ''
 					 ){
 				 	
-							var  Model = Backbone.Model.extend()
-									,model = new Model();							
-					
-							that.template = _.template(template, {
-							    model: model.toJSON()  
-							});
-							
-							that.render(that.template);	
-							
 							setTimeout(function(){
 								
 						    $( 'a[href$="jpg"]\
@@ -110,10 +142,13 @@ define([
 						        resize: true
 						    });		
 						
-							}, 10);
-								
+							}, 1000);
+							
+					};							
+							
+					
 						
-					};
+
 			
 					
         }
