@@ -45,95 +45,94 @@
 		};
 	
 	
-	
-	var my_gall_obj = $('*[class*="pirobox"]');
-	
-	
-	
-	var map = new Object();
-	
-	for (var i=0; i<my_gall_obj.length; i++) {
-		var it=$(my_gall_obj[i]);
-		map['.'+ it.attr('class').match(/^pirobox_gall\w*/)]=0;
-	}
-	
 		
-	var gall_settings = new Array();
-	
-	for (var key in map) {
-		gall_settings.push(key);
-	}
-	
-	for (var i=0; i<gall_settings.length; i++) {
-		$(gall_settings[i]+':first').attr('my_id','first');
-		$(gall_settings[i]+':last').attr('my_id','last');
-		if($(gall_settings[i]).length == 1){
-			$(gall_settings[i]).addClass('single_fix');
-		}else if ($(gall_settings[i]).length > 1){
-			$('*[class*="pirobox_gall"]').each(function(rev){
-				this.rev = rev+0;
-			});		
+		var my_gall_obj = $('*[class*="pirobox"]');
+		
+		
+		
+		var map = new Object();
+		
+		for (var i=0; i<my_gall_obj.length; i++) {
+			var it=$(my_gall_obj[i]);
+			map['.'+ it.attr('class').match(/^pirobox_gall\w*/)]=0;
 		}
 		
-	}
-	
-	var piro_gallery = $(my_gall_obj);
-	
-	console.log(piro_gallery);
-	
-	var	piro_capt_cont = '<div class="piro_caption"></div>';
-	var struct =(
-		'<div class="piro_overlay"></div>'+
-		'<table class="piro_html"  cellpadding="0" cellspacing="0">'+
-		'<tr>'+
-		'<td class="h_t_l"></td>'+
-		'<td class="h_t_c"></td>'+
-		'<td class="h_t_r"></td>'+
-		'</tr>'+
-		'<tr>'+
-		'<td class="h_c_l"></td>'+
-		'<td class="h_c_c">'+
-		'<div class="piro_loader" title="close"><span></span></div>'+
-		'<div class="resize">'+
-		'<div class="nav_big">'+
-		'<a href="#close" class="piro_close" title="close"></a>'+
-		'<a href="#next" class="piro_next" title=""></a>'+
-		'<a href="#prev" class="piro_prev" title=""></a>'+
-		'</div>'+
-		'<div class="div_reg"></div>'+
-		'</div>'+
-		'</td>'+
-		'<td class="h_c_r"></td>'+
-		'</tr>'+
-		'<tr>'+
-		'<td class="h_mb_l"></td>'+
-		'<td class="h_mb_c">'+
-		'<div class="nav_container">'+
-		'<div class="nav_container_hide">'+
-		'<a href="#next" class="piro_next" title=""></a>'+
-		'<div class="piro_next_fake"></div>'+
-		'<div class="piro_close" title="close"></div>'+
-		'<a href="#prev" class="piro_prev" title=""></a>'+
-		'<div class="piro_prev_fake"></div>'+
-		'<a href="" target="_blank" class="piro_twitter" title="share on twitter"></a>'+
-		'<a href="" target="_blank" class="piro_facebook" title="share on facebook"></a>'+
-		'<a href="#ZoomIn" class="piro_zoomIn" title="ZoomIn"></a>'+
-		'<a href="#ZoomOut" class="piro_zoomOut" title="ZoomOut test"></a>'+
-		'</div>'+
-		'</div>'+
-		'</td>'+
-		'<td class="h_mb_r"></td>'+
-		'</tr>'+
-		'<tr>'+
-		'<td class="h_b_l"></td>'+
-		'<td class="h_b_c"></td>'+
-		'<td class="h_b_r"></td>'+
-		'</tr>'+
-		'</table>'
-		);
+			
+		var gall_settings = new Array();
+		
+		for (var key in map) {
+			gall_settings.push(key);
+		}
+		
+		for (var i=0; i<gall_settings.length; i++) {
+			$(gall_settings[i]+':first').attr('my_id','first');
+			$(gall_settings[i]+':last').attr('my_id','last');
+			if($(gall_settings[i]).length == 1){
+				$(gall_settings[i]).addClass('single_fix');
+			}else if ($(gall_settings[i]).length > 1){
+				$('*[class*="pirobox_gall"]').each(function(rev){
+					this.rev = rev+0;
+				});		
+			}
+			
+		}
+		
+		var piro_gallery = $(my_gall_obj);
+		
+		var	piro_capt_cont = '<div class="piro_caption"></div>';
+		var struct =(
+			'<div class="piro_overlay"></div>'+
+			'<table class="piro_html"  cellpadding="0" cellspacing="0">'+
+			'<tr>'+
+			'<td class="h_t_l"></td>'+
+			'<td class="h_t_c"></td>'+
+			'<td class="h_t_r"></td>'+
+			'</tr>'+
+			'<tr>'+
+			'<td class="h_c_l"></td>'+
+			'<td class="h_c_c">'+
+			'<div class="piro_loader" title="close"><span></span></div>'+
+			'<div class="resize">'+
+			'<div class="nav_big">'+
+			'<a href="#close" class="piro_close" title="close"></a>'+
+			'<a href="#next" class="piro_next" title=""></a>'+
+			'<a href="#prev" class="piro_prev" title=""></a>'+
+			'</div>'+
+			'<div class="div_reg"></div>'+
+			'</div>'+
+			'</td>'+
+			'<td class="h_c_r"></td>'+
+			'</tr>'+
+			'<tr>'+
+			'<td class="h_mb_l"></td>'+
+			'<td class="h_mb_c">'+
+			'<div class="nav_container">'+
+			'<div class="nav_container_hide">'+
+			'<a href="#next" class="piro_next" title=""></a>'+
+			'<div class="piro_next_fake"></div>'+
+			'<div class="piro_close" title="close"></div>'+
+			'<a href="#prev" class="piro_prev" title=""></a>'+
+			'<div class="piro_prev_fake"></div>'+
+			'<a href="" target="_blank" class="piro_twitter" title="share on twitter"></a>'+
+			'<a href="" target="_blank" class="piro_facebook" title="share on facebook"></a>'+
+			'<a href="#ZoomIn" class="piro_zoomIn" title="ZoomIn"></a>'+
+			'<a href="#ZoomOut" class="piro_zoomOut" title="ZoomOut test"></a>'+
+			'</div>'+
+			'</div>'+
+			'</td>'+
+			'<td class="h_mb_r"></td>'+
+			'</tr>'+
+			'<tr>'+
+			'<td class="h_b_l"></td>'+
+			'<td class="h_b_c"></td>'+
+			'<td class="h_b_r"></td>'+
+			'</tr>'+
+			'</table>'
+			);
+			
+			
 		
 	$('body').append(struct);
-	
 	
 	var wrapper = $('.piro_html'),
 		zoomIn = $('.piro_zoomIn'),
