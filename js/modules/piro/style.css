@@ -75,21 +75,21 @@ images/background_3.jpg
 .piro_html .h_t_l{ 
 	width:25px; 
 	height:25px; 
-	background: url(/modest/js/libs/piro/css/new_skin.png) top left no-repeat;
+	background: url(/modest/js/libs/piro/images/new_skin.png) top left no-repeat;
 }
 .piro_html .h_t_r{ 
 	width:25px; 
 	height:25px; 
-	background: url(/modest/js/libs/piro/css/new_skin.png) top right no-repeat;
+	background: url(/modest/js/libs/piro/images/new_skin.png) top right no-repeat;
 }
 .piro_html .h_t_c{  
 	height:25px;
-	background: url(/modest/js/libs/piro/css/new_skin_top.png) top repeat-x;
+	background: url(/modest/js/libs/piro/images/new_skin_top.png) top repeat-x;
 }
 
 .piro_html .h_c_l{
 	width:25px; 
-	background: url(/modest/js/libs/piro/css/new_skin_left.png) left repeat-y; 
+	background: url(/modest/js/libs/piro/images/new_skin_left.png) left repeat-y; 
 }
 .piro_html .h_c_c{
 	background:#fff;
@@ -118,7 +118,7 @@ images/background_3.jpg
 .piro_html .h_c_c .div_reg img{}
 .piro_html .h_c_r{
 	width:25px; 
-	background: url(/modest/js/libs/piro/css/new_skin_left.png) right repeat-y;
+	background: url(/modest/js/libs/piro/images/new_skin_left.png) right repeat-y;
 }
 
 .piro_html .h_mb_c{  
@@ -129,28 +129,28 @@ images/background_3.jpg
 .piro_html .h_mb_l{ 
 	width:25px;
 	height:0;
-	background: url(/modest/js/libs/piro/css/new_skin_left.png) left repeat-y; 
+	background: url(/modest/js/libs/piro/images/new_skin_left.png) left repeat-y; 
 }
 .piro_html .h_mb_r{
 	width:25px;
 	height:0;
-	background: url(/modest/js/libs/piro/css/new_skin_left.png) right repeat-y;
+	background: url(/modest/js/libs/piro/images/new_skin_left.png) right repeat-y;
 	position:relative;
 }
 
 .piro_html .h_b_c{  
 	height:25px;
-	background: url(/modest/js/libs/piro/css/new_skin_top.png) bottom repeat-x;
+	background: url(/modest/js/libs/piro/images/new_skin_top.png) bottom repeat-x;
 }
 .piro_html .h_b_l{ 
 	width:25px; 
 	height:25px;
-	background: url(/modest/js/libs/piro/css/new_skin.png) bottom left no-repeat;
+	background: url(/modest/js/libs/piro/images/new_skin.png) bottom left no-repeat;
 }
 .piro_html .h_b_r{
 	width:25px; 
 	height:25px;
-	background: url(/modest/js/libs/piro/css/new_skin.png) bottom right no-repeat;
+	background: url(/modest/js/libs/piro/images/new_skin.png) bottom right no-repeat;
 }
 
 /*::::: LOADER :::::*/
@@ -164,7 +164,7 @@ images/background_3.jpg
 	display:block;
 	z-index:1500197;
 	cursor:pointer;
-	background:url(/modest/js/libs/piro/css/loader_nav.png) no-repeat;
+	background:url(/modest/js/libs/piro/images/loader_nav.png) no-repeat;
 }
 .piro_loader span{
 	position:absolute;
@@ -177,7 +177,7 @@ images/background_3.jpg
 	padding:0;
 	display:block;
 	z-index:1500198; 
-	background:url(/modest/js/libs/piro/css/loader.gif) center center no-repeat; 
+	background:url(/modest/js/libs/piro/images/loader.gif) center center no-repeat; 
 }
 
 /*::::: BOTTOM NAVBAR :::::*/
@@ -187,7 +187,7 @@ images/background_3.jpg
 	margin:5px 0 0 0;
 	height:0; 
 	width:99.8%; 
-	background: url(/modest/js/libs/piro/css/nav-bg.png) top left repeat-x; 
+	background: url(/modest/js/libs/piro/images/nav-bg.png) top left repeat-x; 
 	z-index:1500202;
 	border-left:1px solid #101010;
 	border-right:1px solid #101010;
@@ -205,7 +205,7 @@ images/background_3.jpg
 	width:auto; 
 	height:28px; 
 	overflow:hidden;  
-	background:url(/modest/js/libs/piro/css/caption.png); 
+	background:url(/modest/js/libs/piro/images/caption.png); 
 /*	border:1px solid #111;
 	-webkit-border-radius:6px;
 	-moz-border-radius:6px;
@@ -217,7 +217,7 @@ images/background_3.jpg
 .piro_caption_up_down{
 	width:25px; 
 	height:29px; 
-	background:url(/modest/js/libs/piro/css/caption_up_down.png) top no-repeat; 
+	background:url(/modest/js/libs/piro/images/caption_up_down.png) top no-repeat; 
 	position:absolute; top:-29px; right:10px;
 }
 .piro_caption p{
@@ -236,7 +236,7 @@ images/background_3.jpg
 
 /*::::: GENERIC RULES FOR NAVIGATION ELEMENTS :::::*/
 .piro_close,a.piro_next,a.piro_prev,.piro_prev_fake,.piro_next_fake,.piro_twitter,.piro_facebook{width:26px; height:26px;}
-.piro_close,a.piro_next,a.piro_prev,.piro_prev_fake,.piro_next_fake,.piro_zoomIn,.piro_zoomOut,.piro_twitter,.piro_facebook{position:absolute; right:0; bottom:7px; background:url(/modest/js/libs/piro/css/buttons.png) no-repeat;}
+.piro_close,a.piro_next,a.piro_prev,.piro_prev_fake,.piro_next_fake,.piro_zoomIn,.piro_zoomOut,.piro_twitter,.piro_facebook{position:absolute; right:0; bottom:7px; background:url(/modest/js/libs/piro/images/buttons.png) no-repeat;}
 
 /*::::: NAVIGATION OVER IMAGE :::::*/
 .nav_big{
@@ -245,7 +245,7 @@ images/background_3.jpg
 	height:100%;
 	top:0;
 	left:0;
-	background: url(/modest/js/libs/piro/css/blank.gif);
+	background: url(/modest/js/libs/piro/images/blank.gif);
 	z-index:1500201;
 }
 .nav_big a.piro_next{
@@ -264,7 +264,7 @@ images/background_3.jpg
 	z-index:1500220;
 }
 .nav_big a:hover.piro_next{
-	background:url(/modest/js/libs/piro/css/arrow_r.png) center right no-repeat;
+	background:url(/modest/js/libs/piro/images/arrow_r.png) center right no-repeat;
 }
 .nav_big a.piro_prev{
 	position:absolute;
@@ -282,13 +282,13 @@ images/background_3.jpg
 	z-index:1500221;
 }
 .nav_big a:hover.piro_prev{
-	background:url(/modest/js/libs/piro/css/arrow_l.png) center left no-repeat;
+	background:url(/modest/js/libs/piro/images/arrow_l.png) center left no-repeat;
 }
 .nav_big a.piro_close{
 	position:absolute;
 	height:26px; 
 	width:26px; 
-	background:url(/modest/js/libs/piro/css/close.png) center left no-repeat;
+	background:url(/modest/js/libs/piro/images/close.png) center left no-repeat;
 	top:4px; 
 	right:4px; 
 	text-indent:-999em; 
@@ -300,7 +300,7 @@ images/background_3.jpg
 	z-index:1500222;
 }
 .nav_big a:hover.piro_close{
-	background:url(/modest/js/libs/piro/css/close_h.png) center left no-repeat;
+	background:url(/modest/js/libs/piro/images/close_h.png) center left no-repeat;
 }
 /*::::: BUTTONS ON THE BOTTOM NAVBAR :::::*/
 .piro_next_fake{

@@ -1,7 +1,6 @@
 define([
 		 'jquery'
 		,'jquery_ui_1_8_16'
-		,'pirobox'		 
 		,'core'
 		,'underscore' 		
 		,'backbone'
@@ -9,7 +8,6 @@ define([
 	], function(
 		$
 		,jquery_ui 
-		,pirobox 		
 		,core 
 		,_		
 		,Backbone

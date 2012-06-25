@@ -35,7 +35,6 @@ require.config({
 			
 			
 			,"scrollTo": "libs/scrollTo/jquery.scrollTo-min"
-			,"pirobox": "libs/pirobox/js/pirobox_extended_feb_2011" 
 			,"fancyzoom": "libs/fancyzoom/fancyzoom" 
 			,"yox_src": "libs/yoxview/jquery.yoxview-2.21.min" 
 			,"yoxthumbs": "libs/yoxview/jquery.yoxthumbs" 

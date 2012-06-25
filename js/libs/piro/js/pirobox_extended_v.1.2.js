@@ -7,9 +7,12 @@
 * Licence: CC-BY-SA http://creativecommons.org/licenses/by-sa/3/it/
 **/
 (function($) {
+	
 	var flag_scroll = null;
+	
 	$.pirobox_ext = function(opt) {
-		opt = jQuery.extend({
+		
+		var opt = jQuery.extend({
 			piro_speed : 700,
 			zoom_mode : true,
 			move_mode : 'mousemove',
@@ -19,25 +22,27 @@
 			padding:null,
 			attribute: 'rel',
 			resize : false
-		}, opt);
+			}, opt);
 		
-	flag_scroll = opt.piro_scroll;
-	$.fn.piroFadeIn = function(speed, callback) {
-		$(this).fadeIn(speed, function() {
-		if(jQuery.browser.msie)
-			$(this).get(0).style.removeAttribute('filter');
-		if(callback != undefined)
-			callback();
-		});
-	};
-	$.fn.piroFadeOut = function(speed, callback) {
-		$(this).fadeOut(speed, function() {
-		if(jQuery.browser.msie)
-			$(this).get(0).style.removeAttribute('filter');
-		if(callback != undefined)
-			callback();
-		});
-	};
+		flag_scroll = opt.piro_scroll;
+		
+		$.fn.piroFadeIn = function(speed, callback) {
+			$(this).fadeIn(speed, function() {
+			if(jQuery.browser.msie)
+				$(this).get(0).style.removeAttribute('filter');
+			if(callback != undefined)
+				callback();
+			});
+		};
+			
+		$.fn.piroFadeOut = function(speed, callback) {
+			$(this).fadeOut(speed, function() {
+			if(jQuery.browser.msie)
+				$(this).get(0).style.removeAttribute('filter');
+			if(callback != undefined)
+				callback();
+			});
+		};
 	
 	
 	
@@ -52,7 +57,6 @@
 		map['.'+ it.attr('class').match(/^pirobox_gall\w*/)]=0;
 	}
 	
-
 		
 	var gall_settings = new Array();
 	
@@ -74,6 +78,8 @@
 	}
 	
 	var piro_gallery = $(my_gall_obj);
+	
+	console.log(piro_gallery);
 	
 	var	piro_capt_cont = '<div class="piro_caption"></div>';
 	var struct =(
@@ -688,3 +694,4 @@
 		piro_close.add(piro_loader).add(piro_bg).bind('click',function(y){y.preventDefault(); close_all();});	
 	}
 })(jQuery);
+
