@@ -52,7 +52,6 @@ define([
 					        				   		,small: 'js/modules/piro/images/27s.jpg'}]
 					        				,len = images.length;
 					        				
-					        				
 					        	that.collection = new Collection();
 					        	
 					        	for(var i = 0 ; i < len; i++ ){
@@ -71,8 +70,26 @@ define([
 				    						html += that.createHTML(model);
 				    				});
 				    				
-				    				
 					        	that.render( html );	
+					        	
+								    $( 'a[href$="jpg"]\
+								    	 ,a[href$="bmp"]\
+								    	 ,a[href$="gif"]\
+								    	 ,a[href$="jpeg"]\
+								    	 ,a[href$="png"]')
+								    .addClass('pirobox_gallery')
+								    .attr('rel', 'gallery');
+								    
+								    $.pirobox_ext({
+								        piro_speed: 600,
+								        zoom_mode: true,
+								        move_mode: 'mousemove',
+								        bg_alpha: .8,
+								        bgColor:'rgba(0, 0, 0, 0.9)',
+								        piro_scroll: true,
+								        share: true,
+								        resize: true
+								    });							        	
 					        			        		
 		        	});
 		        	
@@ -127,35 +144,9 @@ define([
 							&& window.parent.$('#module3').val() == ''
 					 ){
 				 	
-							setTimeout(function(){
-								
-						    $( 'a[href$="jpg"]\
-						    	 ,a[href$="bmp"]\
-						    	 ,a[href$="gif"]\
-						    	 ,a[href$="jpeg"]\
-						    	 ,a[href$="png"]')
-						    .addClass('pirobox_gallery')
-						    .attr('rel', 'gallery');
-						    
-						    $.pirobox_ext({
-						        piro_speed: 600,
-						        zoom_mode: true,
-						        move_mode: 'mousemove',
-						        bg_alpha: .8,
-						        bgColor:'rgba(0, 0, 0, 0.9)',
-						        piro_scroll: true,
-						        share: true,
-						        resize: true
-						    });		
-						
-							}, 1000);
-							
+
 					};							
 							
-					
-						
-
-			
 					
         }
 
