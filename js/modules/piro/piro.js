@@ -40,29 +40,36 @@ define([
 					        				,images = [33, 34, 37, 38, 13, 27]
 					        				,len = images.length;
 					        				
+					        	that.collection = new Collection();
 					        	
 					        	for(var i = 0 ; i < len; i++ ){
-					        		html += that.createModel(images[i]);
+					        		
+		    							var model = new Model({		small: images[i] + 's'
+								    											 ,large: images[i] 
+																				});
+																				
+											model.set('cid', model.cid);
+											
+											that.collection.add([model]);			        	
+						        						        		
 					        	}
 					        	
+					        	that.collection.each(function(model){
+				    						html += that.createHTML(model);
+				    				});
+				    				
+				    				
 					        	that.render( html );	
 					        			        		
 		        	});
 		        	
     				}
     				
-    				,createModel: function(image){
-    					
-	    					var model = new Model({		small: image + 's'
-							    											 ,large: image 
-																			});
+    				,createHTML: function(model){
 																	
-								model.set('cid', model.cid);
-								
 								var html = _.template(template, {
 								    model: model.toJSON()  
 								});
-	
 	
 						 		return html;	
     					
