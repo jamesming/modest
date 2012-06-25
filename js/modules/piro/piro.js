@@ -37,15 +37,28 @@ define([
 		        	core.loadCSS('piro', function(){
 		        		
 					        	var		html=''
-					        				,images = [33, 34, 37, 38, 13, 27]
+					        				,images = [
+						        					{ large: 'js/modules/piro/images/33.jpg'
+						        				   ,small: 'js/modules/piro/images/33s.jpg'}
+						        				, { large: 'js/modules/piro/images/34.jpg'
+						        				   ,small: 'js/modules/piro/images/34s.jpg'}
+						        				, { large: 'js/modules/piro/images/37.jpg'
+						        				   ,small: 'js/modules/piro/images/37s.jpg'}
+						        				, { large: 'js/modules/piro/images/38.jpg'
+						        				   ,small: 'js/modules/piro/images/38s.jpg'}
+						        				, { large: 'js/modules/piro/images/13.jpg'
+						        				  	,small: 'js/modules/piro/images/13s.jpg'}
+						        				, { large: 'js/modules/piro/images/27.jpg'
+					        				   		,small: 'js/modules/piro/images/27s.jpg'}]
 					        				,len = images.length;
+					        				
 					        				
 					        	that.collection = new Collection();
 					        	
 					        	for(var i = 0 ; i < len; i++ ){
 					        		
-		    							var model = new Model({		small: images[i] + 's'
-								    											 ,large: images[i] 
+		    							var model = new Model({		small: images[i].small
+								    											 		 ,large: images[i].large 
 																				});
 																				
 											model.set('cid', model.cid);
