@@ -49,9 +49,6 @@ define([
 					        			        		
 		        	});
 		        	
-		        	
-		        	
-		        	
     				}
     				
     				,createModel: function(image){
