@@ -36,40 +36,36 @@ define([
     					
 		        	core.loadCSS('piro', function(){
 		        		
-					        	var		count=9
-					        				,html=''
+					        	var		html=''
 					        				,images = [33, 34, 37, 38, 13, 27]
 					        				,len = images.length;
 					        				
-					        	that.collection = new Collection()
 					        	
 					        	for(var i = 0 ; i < len; i++ ){
 					        		html += that.createModel(images[i]);
 					        	}
 					        	
-					        	that.render( html );			        		
-		        		
-		        	}); 
+					        	that.render( html );	
+					        			        		
+		        	});
+		        	
+		        	
 		        	
 		        	
     				}
     				
     				,createModel: function(image){
     					
-	    					var model = new Model({
-							    											 small: image + 's'
-							    											,large: image 
+	    					var model = new Model({		small: image + 's'
+							    											 ,large: image 
 																			});
 																	
 								model.set('cid', model.cid);
 								
-								this.collection.add([
-									model
-						 		]);							
-								
 								var html = _.template(template, {
 								    model: model.toJSON()  
 								});
+	
 	
 						 		return html;	
     					
@@ -80,14 +76,7 @@ define([
 					  ,render: function(html) {
 					      $(this.el).append(html);
 					  }
-					  
-				    ,events: {
-				         "click #piro .someClass": "donow"
-				    }					  
-        
-		        ,donow: function(  ){
-		        	
-		        }
+
 				}
     );	
 
