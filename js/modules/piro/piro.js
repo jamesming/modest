@@ -126,16 +126,41 @@ define([
         	
 		  		var that = this.view;
 		  	
-		      core.registerMethod(this.module_name, 'doSomething', function( model ){
+		      core.registerMethod(this.module_name, 'createHTML', function( collection ){
 
-							
+					        	that.collection.each(function(model){
+				    						html += that.createHTML(model);
+				    				});
       		});
+      		
+      		
+		      core.registerMethod(this.module_name, 'applyPiro', function( collection ){
+
+								    $( 'a[href$="jpg"]\
+								    	 ,a[href$="bmp"]\
+								    	 ,a[href$="gif"]\
+								    	 ,a[href$="jpeg"]\
+								    	 ,a[href$="png"]')
+								    .addClass('pirobox_gallery')
+								    .attr('rel', 'gallery');
+								    
+								    $.pirobox_ext({
+								        piro_speed: 600,
+								        zoom_mode: true,
+								        move_mode: 'mousemove',
+								        bg_alpha: .8,
+								        bgColor:'rgba(0, 0, 0, 0.9)',
+								        piro_scroll: true,
+								        share: true,
+								        resize: true
+								    });	
+      		});      		
       		
         }
 
         ,init: function() {
         	
-					//this.register();
+					this.register();
 					
 					var that = this.view;
 				
