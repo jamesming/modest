@@ -1,9 +1,9 @@
 define([
-		 'jquery'
+		 'order!jquery'
 		,'core'
 		,'underscore' 		
 		,'backbone'
-		,'fancyzoom'
+		,'order!fancyzoom'
 		,'text!modules/modal/index.html?v='  + (Math.floor(Math.random() * (99999999999999 - 1 + 1)) + 1)
 	], function(
 		$, 

@@ -1,5 +1,5 @@
 define([
-		 'jquery'
+		 'order!jquery'
 		,'order!jquery_ui_1_8_16'
 		,'order!widget'
 		,'order!mouse'

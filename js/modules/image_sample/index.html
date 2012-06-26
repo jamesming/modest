@@ -1,6 +1,11 @@
-<li class='box'  href='#yoxview'>
+<li class='box'>
 	<a>
-		<img cid='{{ model.cid}}'  image_id='image_{{ model.id }}'  src='{{model.default_src}}'/>
+		<!-- 
+		<img cid='{{ model.cid}}'  image_id='image_{{ model.id }}'  src='{{ model.default_src }}'/> 
+		-->
+		 
+		<img cid='{{ model.cid}}'  image_id='image_{{ model.id }}'  src='/api/uploads/images/{{ model.id }}/file_thumb.png'/>
+
 	</a>
 	<div  class='overlay delete' >delete
 	</div>

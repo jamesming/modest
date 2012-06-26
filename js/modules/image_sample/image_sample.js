@@ -1,6 +1,6 @@
 define([
-		 'jquery'
-		,'jquery_ui_1_8_16'
+		 'order!jquery'
+		,'order!jquery_ui_1_8_16'
 		,'core'
 		,'underscore' 		
 		,'backbone'
@@ -24,6 +24,13 @@ define([
 				,Image_sampleView = Backbone.View.extend();
 			
     core.createContainer(module_name, container_type = 'ul');
+    
+    _.extend(Collection.prototype, {
+    	
+		    model:Model,
+		    url: '/api/index.php/rest/index/' + table
+    	
+    	});	    
 
     _.extend(Image_sampleView.prototype,{
     	
@@ -133,8 +140,44 @@ define([
 		        	
 									return this.collection.getByCid(cid);
 		        			
-		        }			        	  
+		        }		
 		        
+						,createHTML: function(model){
+																	
+								var html = _.template(template, {
+								    model: model.toJSON()  
+								});
+		
+						 		return html;	
+							
+						}		 
+								       	        	  
+		    		,addNewlyCreateModelsToCollection:function(){
+		    			
+		    					var  model = new Model({
+										    							 table: table
+																			,user_id:342
+																			,name:'pic of heart'
+																			,description: 'Lorem ipsum'
+																			,thumb_width: 200
+																			,thumb_height: 200
+																			,full_width: 400
+																			,full_height: 400
+																			,module_name: module_name
+																			,default_src: 'http://worldvillage.com/wp-content/themes/worldVillage/images/noav-small.png'
+																			,callbackWhenRemoved: function(dom_el){
+																				dom_el.parent().parent().remove();
+																			}
+																		});
+																		
+									model.set('cid', model.cid);
+									model.set('php_callback_dom_el', "$('#" + module_name + " img[cid=" + model.get('cid') + "]')");
+									
+									this.collection.add([
+										model
+							 		]);							
+									
+		    		}
 				}
     );	
 
@@ -146,49 +189,48 @@ define([
     		
     		,view:new Image_sampleView()
     		
-    		,createModel:function(){
-    			
-    					var  that = this.view
-    							,model = new Model({
-								    							 table: table
-																	,name:'pic of heart'
-																	,description: 'Lorem ipsum'
-																	,thumb_width: 200
-																	,thumb_height: 200
-																	,full_width: 400
-																	,full_height: 400
-																	,module_name: module_name
-																	,default_src: 'http://worldvillage.com/wp-content/themes/worldVillage/images/noav-small.png'
-																	,callbackWhenRemoved: function(dom_el){
-																		dom_el.parent().parent().remove();
-																	}
-																});
-																
-							model.set('cid', model.cid);
-							model.set('php_callback_dom_el', "$('#" + module_name + " img[cid=" + model.get('cid') + "]')");
-							
-							that.collection.add([
-								model
-					 		]);							
-							
-							var html = _.template(template, {
-							    model: model.toJSON()  
-							});
-
-					 		return html;		
-    		}
 
         ,init: function() {
 					
 					var  that = this.view
-							,count=9
+//							,count=9
 							,html='';
-	    				
+							
 	    				that.collection = new Collection();
 	   					
-	   					while(--count){html += this.createModel();};
-					 		
-							that.render( html );		
+//	   					while(--count) that.addNewlyCreateModelsToCollection();
+
+							that.collection.fetch({
+								
+											 add: false 
+											
+										  ,success: function ( response) {
+										  	
+//										  		console.log(JSON.stringify(response));
+
+														that.collection.each(function(model){
+															model.set('cid', model.cid);
+														  //console.log('model ' + model.get('name'));
+														});
+														
+														that.collection.each(function(model){
+															html += that.createHTML(model);
+														});
+														
+														that.render( html );		
+
+										  }
+										  
+										  ,error: function(){
+										  		core.log(JSON.stringify(response));
+										  		
+										  }
+										}
+							);
+
+							
+							
+
 					
         }
 
