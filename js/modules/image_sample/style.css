@@ -65,4 +65,14 @@
 			cursor:pointer;
 			display:none;
 	}	
+	#image_sample .box .overlay.piro_click{
+			background-color: rgba(0, 0, 0, 0.25);	
+			top:73%;
+			left:5%;
+			width:90px;
+			height:50px;
+			cursor:pointer;
+			display:none;
+	}		
+	
 	

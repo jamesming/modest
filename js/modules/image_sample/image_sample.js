@@ -49,7 +49,7 @@ define([
 						        		
 						        			$(this).children('.overlay.edit').show();
 						        			
-													if(model.get('id'))$(this).children('.overlay.delete, .overlay.enlarge').show();
+													if(model.get('id'))$(this).children('.overlay.delete, .overlay.enlarge, .overlay.piro_click').show();
 													
 													
 												}).mouseout(function() {
@@ -58,11 +58,11 @@ define([
 						        			   ,model = that.getModel(cid);											
 													
 													$(this).children('.overlay.edit').hide();
-													if(model.get('id'))$(this).children('.overlay.delete, .overlay.enlarge').hide();
+													if(model.get('id'))$(this).children('.overlay.delete, .overlay.enlarge, .overlay.piro_click').hide();
 												});										
 				
 						        	
-						        	$('.delete, .enlarge')
+						        	$('.delete, .enlarge, .piro_click')
 						        	.mouseover(function() {
 													$(this).css({'background-color':'rgba(0, 0, 0, 0.5)'})
 												})
@@ -80,7 +80,12 @@ define([
 														
 												});
 
+											$('.piro_click').click(function() {
 												
+						        			var cid = $(this).parent().find('img').attr('cid');
+						        			$('#piro li a[cid='+ cid +']').click();
+														
+												});
 										
 		        	});		        	
 
@@ -212,14 +217,13 @@ define([
 															model.set('cid', model.cid);
 															model.set('small', '/api/uploads/'+model.get('table')+'/'+model.get('id')+'/file_thumb.png');
 															model.set('large', '/api/uploads/'+model.get('table')+'/'+model.get('id')+'/file.png');
-														  //console.log('model ' + model.get('name'));
 														});
 														
-//														that.collection.each(function(model){
-//															html += that.createHTML(model);
-//														});
+														that.collection.each(function(model){
+															html += that.createHTML(model);
+														});
 														
-														// that.render( html );	
+														that.render( html );	
 														
 														
 														core.method('piro', 'createHTML', arg1 = that.collection);
