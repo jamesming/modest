@@ -62,7 +62,25 @@ if( window.parent.hasOwnProperty("$") &&	window.parent.$('#single_module').is(":
 	
 		
 }else{
-	var whichApp = window.parent.$('#app').val();	
+	
+	
+		if( window.parent.hasOwnProperty("$") ){
+				var  whichApp = window.parent.$('#app').val();
+		}else{
+				var global_get = function(name) {
+						name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+						var regexS = "[\\?&]"+name+"=([^&#]*)";
+						var regex = new RegExp( regexS );
+						var results = regex.exec( window.location.href );
+						if( results == null )
+						return "";
+						else
+						return results[1];			
+						}
+					 ,whichApp = global_get('app');
+				
+		};
+			
 };
  
 
