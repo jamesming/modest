@@ -36,7 +36,16 @@ define([
     					
 		        	core.loadCSS('piro', function(){
 		        		
-					        	var		html=''
+	       						
+					        			        		
+		        	});
+		        	
+    				}
+    				
+    				
+    				,singleMode:function(){
+    					
+				        	var		html=''
 					        				,images = [
 						        					{ large: 'js/modules/piro/images/33.jpg'
 						        				   ,small: 'js/modules/piro/images/33s.jpg'}
@@ -52,7 +61,7 @@ define([
 					        				   		,small: 'js/modules/piro/images/27s.jpg'}]
 					        				,len = images.length;
 					        				
-					        	that.collection = new Collection();
+					        	this.collection = new Collection();
 					        	
 					        	for(var i = 0 ; i < len; i++ ){
 					        		
@@ -62,15 +71,17 @@ define([
 																				
 											model.set('cid', model.cid);
 											
-											that.collection.add([model]);			        	
+											this.collection.add([model]);			        	
 						        						        		
 					        	}
 					        	
-					        	that.collection.each(function(model){
+					        	var that = this;
+					        	
+					        	this.collection.each(function(model){
 				    						html += that.createHTML(model);
 				    				});
 				    				
-					        	that.render( html );	
+					        	this.render( html );	
 					        	
 								    $( 'a[href$="jpg"]\
 								    	 ,a[href$="bmp"]\
@@ -89,10 +100,9 @@ define([
 								        piro_scroll: true,
 								        share: true,
 								        resize: true
-								    });							        	
-					        			        		
-		        	});
-		        	
+								    });							 	
+    					
+    					
     				}
     				
     				,createHTML: function(model){
@@ -127,14 +137,19 @@ define([
 		  		var that = this.view;
 		  	
 		      core.registerMethod(this.module_name, 'createHTML', function( collection ){
+		      	
+		      		var		html='';
 
-					        	that.collection.each(function(model){
+					        	collection.each(function(model){
 				    						html += that.createHTML(model);
 				    				});
+				    				
+					        	that.render( html );	
+					        	
       		});
       		
       		
-		      core.registerMethod(this.module_name, 'applyPiro', function( collection ){
+		      core.registerMethod(this.module_name, 'applyPiro', function(){
 
 								    $( 'a[href$="jpg"]\
 								    	 ,a[href$="bmp"]\
@@ -169,6 +184,10 @@ define([
 							&& window.parent.$('#module3').val() == ''
 					 ){
 				 	
+				 			setTimeout(function(){
+				 				that.singleMode();
+				 			}, 1000);
+				 			
 
 					};							
 							

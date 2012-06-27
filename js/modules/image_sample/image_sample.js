@@ -210,14 +210,20 @@ define([
 
 														that.collection.each(function(model){
 															model.set('cid', model.cid);
+															model.set('small', '/api/uploads/'+model.get('table')+'/'+model.get('id')+'/file_thumb.png');
+															model.set('large', '/api/uploads/'+model.get('table')+'/'+model.get('id')+'/file.png');
 														  //console.log('model ' + model.get('name'));
 														});
 														
-														that.collection.each(function(model){
-															html += that.createHTML(model);
-														});
+//														that.collection.each(function(model){
+//															html += that.createHTML(model);
+//														});
 														
-														that.render( html );		
+														// that.render( html );	
+														
+														
+														core.method('piro', 'createHTML', arg1 = that.collection);
+														core.method('piro', 'applyPiro');
 
 										  }
 										  

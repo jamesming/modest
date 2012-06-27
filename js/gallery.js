@@ -4,12 +4,14 @@ define([
     ,'modules/image_sample/image_sample'
     ,'modules/upload/upload'
     ,'modules/modal/modal'
+    ,'modules/piro/piro'
     ], function(
 		 core
 		,reset
 		,image_sample
 		,upload
 		,modal
+		,piro
 		) {
 			
 		var console_out = function(){
@@ -41,6 +43,7 @@ define([
         	core.registerModuleWithObject('image_sample', image_sample);   
         	core.registerModuleWithObject('upload', upload);   
         	core.registerModuleWithObject('modal', modal);   
+        	core.registerModuleWithObject('piro', piro);   
         	
 					
 					
