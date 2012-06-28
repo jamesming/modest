@@ -44,7 +44,7 @@ define([
     				
     				
     				,singleMode:function(){
-    					
+
 				        	var		html=''
 					        				,images = [
 						        					{ large: 'js/modules/piro/images/33.jpg'
@@ -80,7 +80,7 @@ define([
 					        	this.collection.each(function(model){
 				    						html += that.createHTML(model);
 				    				});
-				    				
+
 					        	this.render( html );	
 					        	
 								    $( 'a[href$="jpg"]\

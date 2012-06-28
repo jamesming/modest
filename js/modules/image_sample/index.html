@@ -1,11 +1,10 @@
 <li class='box'>
 	<a>
-		<!-- 
-		<img cid='{{ model.cid}}'  image_id='image_{{ model.id }}'  src='{{ model.default_src }}'/> 
-		-->
-		 
-		<img cid='{{ model.cid}}'  image_id='image_{{ model.id }}'  src='/api/uploads/images/{{ model.id }}/file_thumb.png'/>
-
+		<%  if( model.id ) { %>
+				<img cid='<%=  model.cid%>'  image_id='image_<%=  model.id %>'  src='/api/uploads/images/<%=  model.id %>/file_thumb.png'/>
+		<%  }else{ %>
+				<img cid='<%=  model.cid%>'  image_id='image_<%=  model.id %>'  src='<%=  model.default_src %>'/> 
+		<%  } %>
 	</a>
 	<div  class='overlay delete' >delete
 	</div>
@@ -13,6 +12,6 @@
 	</a>
 	<a  class='overlay piro_click'  >piro
 	</a>					
-	<div  class='overlay edit' >Upload for {{ model.cid}}
+	<div  class='overlay edit' >Upload for <%= model.cid %>
 	</div>
 </li>

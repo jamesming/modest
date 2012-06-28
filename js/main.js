@@ -18,6 +18,7 @@ require.config({
 			*
 			*/
 			,"underscore": "libs/lodash-0.2.1" // replacement for underscore   : https://github.com/bestiejs/lodash
+			//,"underscore": "https://raw.github.com/amdjs/underscore/master/underscore" // replacement for underscore   : https://github.com/bestiejs/lodash
 			,"backbone": "libs/backbone.0.9.2"
 			,"less": "libs/less-1.3.0"
 			
@@ -102,9 +103,9 @@ require([
 		* CHANGES UNDERSCORE FOR MUSTACHE LIKE TEMPLATING 
 		*
 		*/
-		_.templateSettings = {
-			interpolate: /\{\{(.+?)\}\}/g
-		};		
+//		_.templateSettings = {
+//			interpolate: /\{\{(.+?)\}\}/g
+//		};		
 
 		core.BrowserDetect.init();
 		app.init();

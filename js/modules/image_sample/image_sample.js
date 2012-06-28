@@ -155,10 +155,49 @@ define([
 		
 						 		return html;	
 							
-						}		 
+						}		
+						
+						
+						,fetchFromDB:function(){ 
+							
+							var  that = this
+									,html='';
+							
+							this.collection.fetch({
+								
+											 add: false 
+											
+										  ,success: function ( response) {
+										  	
+														that.collection.each(function(model){
+															model.set('cid', model.cid);
+															//model.set('small', '/api/uploads/'+model.get('table')+'/'+model.get('id')+'/file_thumb.png');
+															model.set('large', '/api/uploads/'+model.get('table')+'/'+model.get('id')+'/file.png');
+														});
+														
+														that.collection.each(function(model){
+															html += that.createHTML(model);
+														});
+														
+														that.render( html );	
+														
+														
+														core.method('piro', 'createHTML', arg1 = that.collection);
+														core.method('piro', 'applyPiro');
+
+										  }
+										  
+										  ,error: function(){
+										  		core.log(JSON.stringify(response));
+										  		
+										  }
+										}
+							);
+							
+						}
 								       	        	  
 		    		,addNewlyCreateModelsToCollection:function(){
-		    			
+
 		    					var  model = new Model({
 										    							 table: table
 																			,user_id:342
@@ -198,49 +237,20 @@ define([
         ,init: function() {
 					
 					var  that = this.view
-//							,count=9
+							,count=9
 							,html='';
 							
 	    				that.collection = new Collection();
 	   					
 //	   					while(--count) that.addNewlyCreateModelsToCollection();
-
-							that.collection.fetch({
-								
-											 add: false 
-											
-										  ,success: function ( response) {
-										  	
-//										  		console.log(JSON.stringify(response));
-
-														that.collection.each(function(model){
-															model.set('cid', model.cid);
-															model.set('small', '/api/uploads/'+model.get('table')+'/'+model.get('id')+'/file_thumb.png');
-															model.set('large', '/api/uploads/'+model.get('table')+'/'+model.get('id')+'/file.png');
-														});
-														
-														that.collection.each(function(model){
-															html += that.createHTML(model);
-														});
-														
-														that.render( html );	
-														
-														
-														core.method('piro', 'createHTML', arg1 = that.collection);
-														core.method('piro', 'applyPiro');
-
-										  }
-										  
-										  ,error: function(){
-										  		core.log(JSON.stringify(response));
-										  		
-										  }
-										}
-							);
-
+//
+//		        	that.collection.each(function(model){
+//	    						html += that.createHTML(model);
+//	    				});
+//	    				
+//		        	that.render( html );	
 							
-							
-
+							that.fetchFromDB();
 					
         }
 
