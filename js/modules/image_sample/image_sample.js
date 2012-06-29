@@ -196,6 +196,7 @@ define([
 															model.set('large', '/api/uploads/'+model.get('table')+'/'+model.get('id')+'/file.png');
 															
 															console.log('Retrieved -  id:' + model.get('id') + ' name:' + model.get('name')  +' cid:' + model.get('cid'));
+															console.log(model);
 															
 														});
 														
@@ -265,6 +266,7 @@ define([
 //		        	that.render( html );	
 							
 							that.fetchFromDB( function(){
+								
 								that.addNewlyCreateModelsToCollection();
 								
 								that.collection.each(function(model){
@@ -276,7 +278,8 @@ define([
 								that.render( that.html );
 								
 								core.method('piro', 'createHTML', arg1 = that.collection);
-								core.method('piro', 'applyPiro');								
+								core.method('piro', 'applyPiro');				
+												
 							});
 							
 					
