@@ -27,14 +27,35 @@ define([
     
     _.extend(Collection.prototype, {
     	
-		    model:Model,
-		    url: '/api/index.php/rest/index/' + table
+    		 initialize:function(){ 
+    		 	
+							this.bind('add', function(model){
+		
+									 console.log('Added - Name:' + model.get('name')  +' cid:' + model.get('cid'));
+										
+							});		   
+							
+							
+							this.bind('reset', function(){  // CALLED RIGHT AFTER COLLECTION IS FETCHED
+								
+									 console.log('Data pulled from DB');
+															
+							}, this);							 
+							 		 	
+    		}
+    	
+		    ,model:Model
+		    
+		    ,url: '/api/index.php/rest/index/' + table
+   
     	
     	});	    
 
     _.extend(Image_sampleView.prototype,{
     	
-    				initialize: function(){
+    				  html:''
+    	
+    				,initialize: function(){
     					
     							var that = this;
 
@@ -158,7 +179,7 @@ define([
 						}		
 						
 						
-						,fetchFromDB:function(){ 
+						,fetchFromDB:function(callback){ 
 							
 							var  that = this
 									,html='';
@@ -173,17 +194,12 @@ define([
 															model.set('cid', model.cid);
 															//model.set('small', '/api/uploads/'+model.get('table')+'/'+model.get('id')+'/file_thumb.png');
 															model.set('large', '/api/uploads/'+model.get('table')+'/'+model.get('id')+'/file.png');
+															
+															console.log('Retrieved -  id:' + model.get('id') + ' name:' + model.get('name')  +' cid:' + model.get('cid'));
+															
 														});
 														
-														that.collection.each(function(model){
-															html += that.createHTML(model);
-														});
-														
-														that.render( html );	
-														
-														
-														core.method('piro', 'createHTML', arg1 = that.collection);
-														core.method('piro', 'applyPiro');
+														callback();
 
 										  }
 										  
@@ -201,7 +217,7 @@ define([
 		    					var  model = new Model({
 										    							 table: table
 																			,user_id:342
-																			,name:'pic of heart'
+																			,name:'pic added'
 																			,description: 'Lorem ipsum'
 																			,thumb_width: 200
 																			,thumb_height: 200
@@ -217,10 +233,8 @@ define([
 									model.set('cid', model.cid);
 									model.set('php_callback_dom_el', "$('#" + module_name + " img[cid=" + model.get('cid') + "]')");
 									
-									this.collection.add([
-										model
-							 		]);							
-									
+									this.collection.add(model	);
+							 		
 		    		}
 				}
     );	
@@ -250,7 +264,21 @@ define([
 //	    				
 //		        	that.render( html );	
 							
-							that.fetchFromDB();
+							that.fetchFromDB( function(){
+								that.addNewlyCreateModelsToCollection();
+								
+								that.collection.each(function(model){
+									html += that.createHTML(model);
+								});
+								
+								that.html += html;
+								
+								that.render( that.html );
+								
+								core.method('piro', 'createHTML', arg1 = that.collection);
+								core.method('piro', 'applyPiro');								
+							});
+							
 					
         }
 

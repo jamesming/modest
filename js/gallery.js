@@ -39,11 +39,13 @@ define([
 
         init: function() {
         	
+        	
+        	core.registerModuleWithObject('piro', piro);        	
         	core.registerModuleWithObject('reset', reset);   
         	core.registerModuleWithObject('image_sample', image_sample);   
         	core.registerModuleWithObject('upload', upload);   
         	core.registerModuleWithObject('modal', modal);   
-        	core.registerModuleWithObject('piro', piro);   
+   
         	
 					
 					
