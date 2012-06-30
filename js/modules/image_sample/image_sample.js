@@ -195,8 +195,22 @@ define([
 															//model.set('small', '/api/uploads/'+model.get('table')+'/'+model.get('id')+'/file_thumb.png');
 															model.set('large', '/api/uploads/'+model.get('table')+'/'+model.get('id')+'/file.png');
 															
-															console.log('Retrieved -  id:' + model.get('id') + ' name:' + model.get('name')  +' cid:' + model.get('cid'));
-															console.log(model);
+//															console.log('Retrieved -  id:' + model.get('id') + ' name:' + model.get('name')  +' cid:' + model.get('cid'));
+//															console.log(model);
+
+
+																var checkImage = new Image();
+											
+																checkImage.src = model.get('large');
+																
+																checkImage.onload = function() {
+																    model.set('width',this.width);
+																    model.set('height',this.height);
+																    model.set('halfWidth',(this.width/2));
+																    model.set('halfHeight',(this.height/2));
+																};
+
+
 															
 														});
 														
@@ -267,6 +281,10 @@ define([
 							
 							that.fetchFromDB( function(){
 								
+								that.collection.each(function(model){
+									console.log(model.get('width'));
+								});
+								
 								that.addNewlyCreateModelsToCollection();
 								
 								that.collection.each(function(model){
@@ -288,3 +306,15 @@ define([
     }
 
 });
+
+/* 
+				<style>
+					$('img [cid=<%=  model.cid%>]')
+					.css({
+					width:'<%=  model.width   %>px' 
+					,height: '<%=  model.height   %>px' 
+					,'margin-left':'-<%= model.halfWidth    %>px' 
+					,'margin-top':'-<%= model.halfHeight    %>px'
+				})
+				</style>
+*/

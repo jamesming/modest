@@ -1,7 +1,15 @@
 <li class='box'>
 	<a>
 		<%  if( model.id ) { %>
-				<img cid='<%=  model.cid%>'  image_id='image_<%=  model.id %>'  src='/api/uploads/images/<%=  model.id %>/file_thumb.png'/>
+				<img cid='<%=  model.cid%>'  image_id='image_<%=  model.id %>'  
+						src='/api/uploads/images/<%=  model.id %>/file_thumb.png'
+						  style="
+						   width:'<%=  model.width   %>px'
+						  ;height:'<%=  model.height   %>px'
+						  ;margin-left:'-<%= model.halfWidth    %>px'
+						  ;margin-right:'-<%= model.halfHeight    %>px'
+						  "  		
+				/>
 		<%  }else{ %>
 				<img cid='<%=  model.cid%>'  image_id='image_<%=  model.id %>'  src='<%=  model.default_src %>'/> 
 		<%  } %>
