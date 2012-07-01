@@ -281,22 +281,19 @@ define([
 							
 							that.fetchFromDB( function(){
 								
-								that.collection.each(function(model){
-									console.log(model.get('width'));
-								});
-								
-								that.addNewlyCreateModelsToCollection();
-								
-								that.collection.each(function(model){
-									html += that.createHTML(model);
-								});
-								
-								that.html += html;
-								
-								that.render( that.html );
-								
-								core.method('piro', 'createHTML', arg1 = that.collection);
-								core.method('piro', 'applyPiro');				
+
+							that.addNewlyCreateModelsToCollection();
+							
+							that.collection.each(function(model){
+								html += that.createHTML(model);
+							});
+							
+							that.html += html;
+							
+							that.render( that.html );
+							
+							core.method('piro', 'createHTML', arg1 = that.collection);
+							core.method('piro', 'applyPiro');											
 												
 							});
 							

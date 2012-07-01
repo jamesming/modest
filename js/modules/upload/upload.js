@@ -39,17 +39,20 @@ define([
 				    }
 				    
 				    ,saveModel: function(){
+				    	
+				    	
+				    	
+				    	
 				    	this.model.save(
 										{},
 										{
 												success: function(model, response) {
 													
-														core.log( 'Server : ' + JSON.stringify(response));
+														console.log( 'Server : ' + JSON.stringify(response));
 														
 														var id = ( model.get('id') ?  model.get('id') : JSON.stringify(response) );
 														
-														core.log( 'model is being set with id:' + id );
-														
+														console.log( 'model is being set with id:' + id );
 												    model.set('id', id);  // Only set id if wasn't already done so by a previous POST into the database.  A PUT will do nothing.
 												    
 												},
@@ -115,6 +118,9 @@ define([
 				    			}, 1);
 				    			
 				    		}else{
+				    			
+				    			console.log('cid: ' + that.model.get('cid'));
+				    			console.log('cid: ' + that.model.get('php_callback_dom_el'));
 				    	
 				    			$('#php_callback_dom_el').val(that.model.get('php_callback_dom_el'));
 				    			$('#thumb_width').val(that.model.get('thumb_width'));
