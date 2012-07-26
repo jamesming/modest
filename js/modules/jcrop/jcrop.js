@@ -3,12 +3,14 @@ define([
 		,'core'
 		,'underscore' 		
 		,'backbone'
+		,'jcrop'
 		,'text!modules/jcrop/index.html?v='  + (Math.floor(Math.random() * (99999999999999 - 1 + 1)) + 1)
 	], function(
 		$ 
 		,core 
 		,_		
 		,Backbone
+		,jcrop
 		,template
 		) {
 			
@@ -80,6 +82,15 @@ define([
 							});
 							
 							that.render(that.template);		
+							
+							
+							$('#target').Jcrop({
+									onSelect:function(c){
+										console.log(JSON.stringify(c));
+									}
+								});
+							
+							
 						
 					};
 			
