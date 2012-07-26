@@ -146,7 +146,7 @@ define([
             obj.name = name;
             if (!obj.hasOwnProperty('init')) {
                 obj.init = function() {
-                    // console.log(this.name + ' is started.');
+                    //console.log(this.name + ' is started.');
                 };
             }
             modules[name] = obj;

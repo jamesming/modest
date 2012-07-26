@@ -35,6 +35,12 @@ require.config({
 			,"piro": "libs/piro/js/pirobox_extended_v.1.2" 			
 			
 			
+			
+			/* 
+			*
+			*  PLUGINS
+			*
+			*/
 			,"scrollTo": "libs/scrollTo/jquery.scrollTo-min"
 			,"fancyzoom": "libs/fancyzoom/fancyzoom" 
 			,"yox_src": "libs/yoxview/jquery.yoxview-2.21.min" 
@@ -43,6 +49,8 @@ require.config({
 			,"tinyscrollbar": "libs/jquery.tinyscrollbar.1.67"
 			,"mousewheel": "libs/mousewheel/jquery.mousewheel.3.0.6"
 			,"jscrollpane": "libs/scrollpane/jquery.jscrollpane.2.0"
+			,"masonry": "libs/masonry/jquery.masonry.min"
+			,"jcrop": "libs/jcrop/jcrop.min"
 			
 			
 
