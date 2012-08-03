@@ -93,6 +93,20 @@ define([
 							});						
 							
 							that.render(that.template);		
+							
+							
+							
+					    var $container = $('#container');
+					    
+					    $('.photo').addClass('col2');
+					  
+					    $container.imagesLoaded( function(){
+					      $container.masonry({
+					        itemSelector : '.box'
+					      });
+					    });
+							
+							
 						
 					};
 			
